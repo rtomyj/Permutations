@@ -1,27 +1,23 @@
-//...........
-//  Permutation.cpp
-//  Permutations
-//
-//  Created by Javi Gomez on 3/16/17.
-//  Copyright © 2017 Javi Gomez. All rights reserved.
-//
-
-#include "Permutation.hpp"
-
 /*
-    prints information about the string used in the permutation class.
- */
+ Class Function: saves a string reference when instantiated. After that uses the methods within the class to calculate the total number of permutations 
+ the word can udergo. A permutation is a reassembly of elements where each element is different and order matters. For example; in the set
+ {B, I, R, D} BIRD and BRID are different permutations. 
+ Equation: permutation = n!/(k-n)!
 
+
+*/
+#include "Permutation.hpp"
+//    prints information about the string used in the permutation class.
 void Permute:: print(){
     cout << word << endl << "The length is : " << length << endl;
-    cout << "Total Permutations is: " << totalPerm << endl;
+    cout << "Total Permutations are: " << totalPerm << endl;
 }
+
 void Permute::parseWord(){
     // counts chracters in word
     for (auto iter = word.begin(); iter != word.end(); iter ++){
         length ++;
     }
-    // calculates the number of permutations
      totalPerm = calculatePerm(length);
     
     }
