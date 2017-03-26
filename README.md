@@ -1,5 +1,3 @@
-# stringpermutations
+# Permutations
 
-
-C ++ class for permutations of strings with non repeating characters. Allows calls to find out permutation total, as well as print out all possible permutations.
-...
+C++ class for calculating and printing string permutations. Uses recursion for calculation and printing.
