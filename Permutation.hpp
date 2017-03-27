@@ -19,7 +19,7 @@
 
 using namespace std;
 
-class Permute{
+class permutation{
 private:
     string word;
     int length;
@@ -29,8 +29,8 @@ private:
     void recursivePrint(int, string);
     
 public:
-    Permute(string w = "", int l = 0, int p = 1):word(w), length(l), totalPerm(p) { this ->parseWord(); } ; // sets defualt values on variables(word, length, and totalPerm. Defualt constructor takes a string as an argument and sets word var to it. Calls calculate method.
-    ~Permute(){}
+    permutation(string w = "", int l = 0, int p = 1):word(w), length(l), totalPerm(p) { this ->parseWord(); } ; // sets defualt values on variables(word, length, and totalPerm. Defualt constructor takes a string as an argument and sets word var to it. Calls calculate method.
+    ~permutation(){}
     int getLength();
     void printPermutations();
     void print();

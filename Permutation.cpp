@@ -8,12 +8,12 @@
 */
 #include "Permutation.hpp"
 //    prints information about the string used in the permutation class.
-void Permute:: print(){
+void permutation:: print(){
     cout << word << endl << "The length is : " << length << endl;
     cout << "Total Permutations are: " << totalPerm << endl;
 }
 
-void Permute::parseWord(){
+void permutation::parseWord(){
     // counts chracters in word
     for (auto iter = word.begin(); iter != word.end(); iter ++){
         length ++;
@@ -27,17 +27,17 @@ void Permute::parseWord(){
         P(4,4) = 4!/(4-4)! = 4!
  */
 
-int Permute::calculatePerm(int p){
+int permutation::calculatePerm(int p){
     if (p > 0)
     return totalPerm = p * calculatePerm(-- p );
     return 1;
 }
 
-int Permute::getLength(){
+int permutation::getLength(){
     return this -> length;
 }
 
-void Permute::printPermutations(){
+void permutation::printPermutations(){
     recursivePrint(1, word);
 
 }
@@ -53,42 +53,40 @@ void Permute::printPermutations(){
         The second letter (I) gets swapped with the letter R and the letter D (2 swaps, 6 possiblities { (IRD), (IDR), (RID), (RDI), (DRI), (DIR) } ).
         The first letter (B) gets swapped with the letters I, R and D (3 swaps, x possiblities)
  */
-void Permute::recursivePrint(int depth, string temp){
+void permutation::recursivePrint(int depth, string word){
     if (depth != length){
-        string w;
-        w = temp;
+        string placeholder;
+        placeholder = word;
         
         char current;
-        auto next = w.begin();
-        auto iter = w.begin();
+        auto nextIter = placeholder.begin();
+        auto currIter = placeholder.begin();
         
         for (unsigned i = 0; i < depth; i ++){
-            next ++;
+            nextIter ++;
         }
         for (unsigned i = 0; i < depth - 1; i ++){
-            iter ++ ;
+            currIter ++ ;
         }
         
         for (unsigned j = 0; j < length - depth + 1  ; j++){
-            recursivePrint(depth + 1, w);
+            recursivePrint(depth + 1, placeholder);
             
-            w = temp;
-            current = * iter;
-            *iter = *next;
-            *next= current;
-            next ++;
+            placeholder = word;
+            current = * currIter;
+            *currIter = *nextIter;
+            *nextIter= current;
+            nextIter ++;
         }
         
         return;
         
     }
     else if(depth == length){
-        cout << temp << endl;
+        cout << word << endl;
         return;
     }
-     
-        
-        return;
     
+        return;
     
 }

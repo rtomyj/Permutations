@@ -11,16 +11,11 @@ using namespace std;
 //instance
 int main(int argc, const char * argv[]) {
     string word1, word2 ;
-    word1.append("BIRD");
+    word1.append("CAT");
     word2.append("CAT");
-    Permute permutation1(word1), permutation2(word2) ;
+    permutation permutation1(word1), permutation2(word2) ;
     permutation1.print();
     permutation1.printPermutations();
     return 0;
 }
 
-void permute(string word){
-    for ( auto iter = word.begin(); iter != word.end(); iter ++){
-        cout << *iter;
-    }
-}
