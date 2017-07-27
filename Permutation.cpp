@@ -55,7 +55,7 @@ void permutation::printPermutations(){
  */
 void permutation::recursivePrint(int depth, string word){
     if (depth != length){
-        string placeholder;
+        string placeholderz
         placeholder = word;
         
         char current;
